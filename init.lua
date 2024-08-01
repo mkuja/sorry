@@ -14,7 +14,7 @@ local cmp = require 'cmp'
 vim.cmd(":nnoremap <leader>doc :DocsViewToggle<cr>")
 vim.cmd(":nnoremap <leader>docu :DocsViewUpdate<cr>")
 
-# Vimspector mappings
+-- Vimspector mappings
 vim.cmd(":nnoremap <leader>bal <Plug>VimspectorBalloonEval")
 vim.cmd(":nnoremap <leader>cont <Plug>VimspectorContinue")
 vim.cmd(":nnoremap <leader>stop <Plug>VimspectorStop")
