@@ -13,6 +13,7 @@ local cmp = require 'cmp'
 
 vim.cmd(":nnoremap <leader>doc :DocsViewToggle<cr>")
 vim.cmd(":nnoremap <leader>docu :DocsViewUpdate<cr>")
+vim.cmd(":nnoremap <leader>bal <Plug>VimspectorBalloonEval")
 
 
 cmp.setup({

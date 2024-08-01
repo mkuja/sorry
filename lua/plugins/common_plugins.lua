@@ -13,6 +13,7 @@ return {
     'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
     'lewis6991/gitsigns.nvim',
+    'puremourning/vimspector',
     {
       "amrbashir/nvim-docs-view",
       lazy = false,
