@@ -13,7 +13,24 @@ local cmp = require 'cmp'
 
 vim.cmd(":nnoremap <leader>doc :DocsViewToggle<cr>")
 vim.cmd(":nnoremap <leader>docu :DocsViewUpdate<cr>")
+
+# Vimspector mappings
 vim.cmd(":nnoremap <leader>bal <Plug>VimspectorBalloonEval")
+vim.cmd(":nnoremap <leader>cont <Plug>VimspectorContinue")
+vim.cmd(":nnoremap <leader>stop <Plug>VimspectorStop")
+vim.cmd(":nnoremap <leader>rest <Plug>VimspectorRestart")
+vim.cmd(":nnoremap <leader>lsbreak <Plug>VimspectorBreakpoints")
+vim.cmd(":nnoremap <leader>break <Plug>VimspectorToggleBreakpoint")
+vim.cmd(":nnoremap <leader>cbreak <Plug>VimspectorToggleConditionalBreakpoint")
+vim.cmd(":nnoremap <leader>gcur <Plug>VimspectorGoToCurrentLine")
+vim.cmd(":nnoremap <leader>cursor <Plug>VimspectorRunToCursor")
+vim.cmd(":nnoremap <leader>stepout <Plug>VimspectorStepOut")
+vim.cmd(":nnoremap <leader>stepin <Plug>VimspectorStepInto")
+vim.cmd(":nnoremap <leader>stepover <Plug>VimspectorStepOver")
+vim.cmd(":nnoremap <leader>fsu <Plug>VimspectorUpFrame")
+vim.cmd(":nnoremap <leader>fsd <Plug>VimspectorDownFrame")
+vim.cmd(":nnoremap <leader>jmp <Plug>VimspectorJumpToNextBreakPoint")
+vim.cmd(":nnoremap <leader>jmp <Plug>VimspectorJumpToPreviousBreakPoint")
 
 
 cmp.setup({
