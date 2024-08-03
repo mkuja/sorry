@@ -33,6 +33,11 @@ vim.cmd(":nnoremap <leader>jmpn <Plug>VimspectorJumpToNextBreakPoint")
 vim.cmd(":nnoremap <leader>jmpp <Plug>VimspectorJumpToPreviousBreakPoint")
 
 
+
+vim.cmd(":set scrolloff=5")
+vim.cmd(":set cc=89")
+
+
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
