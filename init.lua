@@ -36,6 +36,7 @@ vim.cmd(":nnoremap <leader>jmpp <Plug>VimspectorJumpToPreviousBreakPoint")
 
 vim.cmd(":set scrolloff=5")
 vim.cmd(":set cc=89")
+vim.cmd("set foldmethod=marker")
 
 
 cmp.setup({
