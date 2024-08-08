@@ -7,6 +7,30 @@ require("config.lazy")
 require("mason").setup()
 require("mason-lspconfig").setup()
 
+-- Set up copilot
+vim.keymap.set('i', '<C-a>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
+
+vim.keymap.set('i', '<Tab>', '<Plug>(copilot-accept-line)')
+vim.keymap.set('i', '<C-d>', '<Plug>(copilot-dismiss)')
+vim.keymap.set('i', "<leader>n", '<Plug>(copilot-next)')
+vim.keymap.set('i', '<leader>p', '<Plug>(copilot-previous)')
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = 'gruvbox-material',
+  -- group = ...,
+  callback = function()
+    vim.api.nvim_set_hl(0, 'CopilotSuggestion', {
+      fg = '#555555',
+      ctermfg = 8,
+      force = true
+    })
+  end
+})
+
 
 -- Set up nvim-cmp.
 local cmp = require 'cmp'

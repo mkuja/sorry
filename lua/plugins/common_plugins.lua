@@ -24,7 +24,8 @@ return {
         width = 89,
         update_mode = "manual"
       }
-    }
+    },
+    'github/copilot.vim'
     -- 'petertriho/cmp-git',
 
     -- Snippets for cmp are required.
