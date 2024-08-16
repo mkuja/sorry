@@ -31,7 +31,6 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   end
 })
 
-
 -- Set up nvim-cmp.
 local cmp = require 'cmp'
 
@@ -56,6 +55,11 @@ vim.cmd(":nnoremap <leader>fsd <Plug>VimspectorDownFrame")
 vim.cmd(":nnoremap <leader>jmpn <Plug>VimspectorJumpToNextBreakPoint")
 vim.cmd(":nnoremap <leader>jmpp <Plug>VimspectorJumpToPreviousBreakPoint")
 
+
+-- Tab mappings
+vim.cmd(":nnoremap <leader>tc :tab split<cr>")
+vim.cmd(":nnoremap <leader>tn :tabnext<cr>")
+vim.cmd(":nnoremap <leader>tp :tabprevious<cr>")
 
 
 vim.cmd(":set scrolloff=5")
