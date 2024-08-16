@@ -14,7 +14,7 @@ vim.keymap.set('i', '<C-a>', 'copilot#Accept("\\<CR>")', {
 })
 vim.g.copilot_no_tab_map = true
 
-vim.keymap.set('i', '<Tab>', '<Plug>(copilot-accept-line)')
+vim.keymap.set('i', '<leader>a', '<Plug>(copilot-accept-line)')
 vim.keymap.set('i', '<C-d>', '<Plug>(copilot-dismiss)')
 vim.keymap.set('i', "<leader>n", '<Plug>(copilot-next)')
 vim.keymap.set('i', '<leader>p', '<Plug>(copilot-previous)')
@@ -134,6 +134,45 @@ local cmp_nvim_lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 --     capabilities = cmp_nvim_lsp_capabilities
 -- }
 -- After setting up mason-lspconfig you may set up servers via lspconfig
+
+vim.filetype.add {
+  extension = {
+    jinja = 'jinja',
+    jinja2 = 'jinja',
+    j2 = 'jinja',
+  },
+}
+-- if you want to debug
+vim.lsp.set_log_level("debug")
+
+local nvim_lsp = require('lspconfig')
+local configs = require('lspconfig.configs')
+
+if not configs.jinja_lsp then
+configs.jinja_lsp = {
+  default_config = {
+    name = "jinja-lsp",
+    cmd = { 'jinja-lsp' },
+    filetypes = { 'jinja', 'rust' },
+    root_dir = function(fname)
+      return "."
+      --return nvim_lsp.util.find_git_ancestor(fname)
+    end,
+    init_options = {
+      templates = './templates',
+      backend = { './src' },
+      lang = "rust"
+    },
+},
+}
+end
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+nvim_lsp.jinja_lsp.setup {
+  capabilities = capabilities
+}
+nvim_lsp.jinja_lsp.setup { }
+
 require("lspconfig").lua_ls.setup {}
 require("lspconfig").rust_analyzer.setup {}
 require("lspconfig").basedpyright.setup {
