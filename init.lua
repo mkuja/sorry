@@ -31,8 +31,22 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   end
 })
 
+
+require'lspconfig'.tsserver.setup{
+  filetypes = {
+    "javascript",
+    "typescript",
+  },
+}
+
 -- Set up nvim-cmp.
 local cmp = require 'cmp'
+
+local capabilities = require('cmp_nvim_lsp')
+.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+require'lspconfig'.cssls.setup {
+    capabilities = capabilities,
+}
 
 vim.cmd(":nnoremap <leader>doc :DocsViewToggle<cr>")
 vim.cmd(":nnoremap <leader>docu :DocsViewUpdate<cr>")
@@ -57,7 +71,7 @@ vim.cmd(":nnoremap <leader>jmpp <Plug>VimspectorJumpToPreviousBreakPoint")
 
 
 -- Tab mappings
-vim.cmd(":nnoremap <leader>tc :tab split<cr>")
+vim.cmd(":nnoremap <leader>tc :tabe +Ex<cr>")
 vim.cmd(":nnoremap <leader>tn :tabnext<cr>")
 vim.cmd(":nnoremap <leader>tp :tabprevious<cr>")
 

@@ -25,7 +25,8 @@ return {
         update_mode = "manual"
       }
     },
-    'github/copilot.vim'
+    'github/copilot.vim',
+    'tpope/vim-dadbod'
     -- 'petertriho/cmp-git',
 
     -- Snippets for cmp are required.
